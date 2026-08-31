@@ -1,0 +1,22 @@
+# MSRNet 依赖
+# Python >= 3.8, CUDA >= 11.x (GPU 训练需要)
+
+torch>=2.0
+numpy
+scipy
+h5py
+scikit-learn
+pandas
+matplotlib
+tqdm
+ftfy
+regex
+timm==0.4.12
+spectral
+imageio
+
+# CLIP (OpenAI) -- 无 PyPI 官方包, 需从 GitHub 安装:
+#   pip install git+https://github.com/openai/CLIP.git
+
+# 以下仅 evaluation/ 目录的基准测试需要:
+thop

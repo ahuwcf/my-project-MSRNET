@@ -1,0 +1,25 @@
+name: msrnet
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pytorch>=2.0
+  - pytorch-cuda=12.1
+  - numpy
+  - scipy
+  - h5py
+  - scikit-learn
+  - pandas
+  - matplotlib
+  - tqdm
+  - pip
+  - pip:
+      - ftfy
+      - regex
+      - timm==0.4.12
+      - spectral
+      - imageio
+      - thop
+      - git+https://github.com/openai/CLIP.git
