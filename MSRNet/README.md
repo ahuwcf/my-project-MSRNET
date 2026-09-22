@@ -1,20 +1,4 @@
-# MSRNet
-
-**M**ulti-**S**tage semantic **R**easoning **Net**work for cross-modal hyperspectral image (HSI) domain adaptation.
-
-MSRNet reformulates cross-modal HSI classification as a **progressive three-stage semantic reasoning** process:
-
-1. **SCL** - Semantic Correspondence Learning: coarse semantic initialization from the global visual feature `g` and category descriptions, modulated by λ₁ = σ(f_mod(g));
-2. **CDL** - Category Discrimination Learning: fine-grained local refinement via condition-guided cross-modal fusion between visual patches and fine-grained phrases (multi-positive top-k local alignment);
-3. **DIL** - Domain Invariance Learning: cross-domain semantic correction with a gradient reversal layer, domain-aware text guidance t₃ (λ₃ = σ(f_mod(r))) and a semantic consistency loss.
-
-Key components:
-
-- **UM3F visual encoder** (`FSSMImageEncoder`): spatial / frequency (learnable DCT) / spectral (learnable orthogonal basis, QR-orthogonalized) branches with channel-attention re-weighting;
-- **CATE** (`CLIPTextEncoder`): Conditional Adaptive Text Encoder built on a frozen CLIP backbone, with **MCL** (modality context tokens), **ITPG** (image-conditioned prompts) and a **stage-aware modulator** that scales the prompt strength by λ ∈ (0, 1).
-
-## Repository structure
-
+ 
 ```
 MSRNet/
 ├── MSRNet.py                        # model definition (UM3F + CATE + MSR stages)
